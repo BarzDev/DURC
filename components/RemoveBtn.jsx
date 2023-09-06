@@ -6,10 +6,10 @@ export default function RemoveBtn({ id }) {
   const router = useRouter();
   const removeTopic = async () => {
     const confirmed = confirm("are u sure??");
-    const url = "http://localhost:3000";
+    const url = "https://apimongodb.barzdev.repl.co";
 
     if (confirmed) {
-      const res = await fetch(`${url}/api/topics?id=${id}`, {
+      const res = await fetch(`${url}/api/topics/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {

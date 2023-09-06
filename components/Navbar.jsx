@@ -4,10 +4,10 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between items-center bg-slate-800 px-8 py-3">
       <Link className="text-white font-bold" href={"/"}>
-        Bar&lsque;z CODING
+        Bar&lsque;z CRUD
       </Link>
-      <Link className="bg-white p-2" href={"/addTopic"}>
-        Add Topic
+      <Link className="bg-white p-2 font-bold" href={"/addTopic"}>
+        Add New
       </Link>
     </nav>
   );

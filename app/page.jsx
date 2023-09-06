@@ -1,4 +1,4 @@
-import TopicList from "@/components/TopicList";
+import TopicList from "@/components/TopicList.jsx";
 
 export default function Home() {
   return (

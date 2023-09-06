@@ -1,8 +1,9 @@
 import EditTopicForm from "@/components/EditTopicForm";
+const url = "https://apimongodb.barzdev.repl.co";
 
 const getTopicById = async (id) => {
   try {
-    const res = await fetch(`${process.env.FETCH}/api/topics/${id}`, {
+    const res = await fetch(`${url}/api/topics/${id}`, {
       cache: "no-store",
     });
     if (!res.ok) {

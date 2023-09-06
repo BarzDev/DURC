@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -7,13 +8,12 @@ export default function EditTopicForm({ id, title, description }) {
   const [newTitle, setNewTitle] = useState(title);
   const [newDescription, setNewDescription] = useState(description);
 
-  const url = "http://localhost:3000";
+  const url = "https://apimongodb.barzdev.repl.co";
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // const res = await fetch(`${process.env.FETCH_URL}/api/topics/${id}`, {
       const res = await fetch(`${url}/api/topics/${id}`, {
         method: "PUT",
         headers: {
@@ -38,8 +38,12 @@ export default function EditTopicForm({ id, title, description }) {
       <input onChange={(e) => setNewTitle(e.target.value)} value={newTitle} className="border border-slate-500 px-8 py-2" type="text" placeholder="Add Topic" />
 
       <input onChange={(e) => setNewDescription(e.target.value)} value={newDescription} className="border border-slate-500 px-8 py-2" type="text" placeholder="Topic Description" />
-
-      <button className="bg-green-600 font-bold text-white py-3 px-6 w-fit"> Update Topic</button>
+      <div className="flex gap-5 justify-end">
+        <button className="bg-blue-600 font-bold text-white py-3 px-6 w-fit"> Update Data</button>
+        <Link href={"/"} className="bg-red-600 font-bold text-white py-3 px-6 w-fit">
+          Cancel
+        </Link>
+      </div>
     </form>
   );
 }

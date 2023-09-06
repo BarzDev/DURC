@@ -4,7 +4,7 @@ import { HiPencilAlt } from "react-icons/hi";
 
 const getTopic = async () => {
   try {
-    const res = await fetch(`${process.env.FETCH}/api/topics`, { cache: "no-store" });
+    const res = await fetch(`${process.env.API_URL}/api/topics`, { cache: "no-store" });
     if (!res.ok) {
       throw new Error("Failed to fetch topics");
     }
@@ -15,9 +15,9 @@ const getTopic = async () => {
 };
 
 export default async function TopicList() {
-  //harus ditambah "async" (2/2)
-
-  const { topics } = await getTopic(); // menambah "await" (1/2)
+  const data = await getTopic();
+  const topics = data.topics;
+  // console.log(topics);
   return (
     <>
       {topics.length === 0 ? (
