@@ -43,7 +43,7 @@ export default function EditTopicForm({ id, title, description }) {
       router.push("/");
       Toast.fire({
         icon: "success",
-        title: "Data Updated",
+        title: "Task Updated",
       });
     } catch (error) {
       console.log(error);
@@ -70,7 +70,7 @@ export default function EditTopicForm({ id, title, description }) {
       <div className="flex gap-5 justify-end">
         <button className="bg-blue-600 font-bold text-white py-3 px-6 w-fit">
           {" "}
-          Update Data
+          Update Task
         </button>
         <Link
           href={"/"}

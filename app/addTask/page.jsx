@@ -44,15 +44,15 @@ export default function AddTopic() {
         router.push("/");
         Toast.fire({
           icon: "success",
-          title: "Data Created",
+          title: "Task Created",
         });
       } else {
         router.push("/");
         Toast.fire({
           icon: "error",
-          title: "DATA FULL MAX 7 ENTRY",
+          title: "Task List Full, Do your task",
         });
-        throw new Error("Failed to create a topic");
+        throw new Error("Failed to create a task");
       }
     } catch (error) {
       console.log(error);
@@ -66,8 +66,9 @@ export default function AddTopic() {
         value={title}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Title CRUD"
+        placeholder="Title Task"
         id="title"
+        required
       />
 
       <input
@@ -76,6 +77,7 @@ export default function AddTopic() {
         className="border border-slate-500 px-8 py-2"
         type="text"
         placeholder="Description"
+        required
       />
 
       <button
@@ -83,7 +85,7 @@ export default function AddTopic() {
         className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
       >
         {" "}
-        SAVE DATA
+        SAVE TASK
       </button>
     </form>
   );

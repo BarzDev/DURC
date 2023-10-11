@@ -10,7 +10,7 @@ export default function RemoveBtn({ id }) {
   const removeTopic = async () => {
     Swal.fire({
       icon: "warning",
-      title: "Remove Data?",
+      title: "Remove Task?",
       showConfirmButton: false,
       showDenyButton: true,
       showCancelButton: true,
@@ -18,7 +18,7 @@ export default function RemoveBtn({ id }) {
     }).then(async (result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isDenied) {
-        Swal.fire({ icon: "error", title: "Data Removed" });
+        Swal.fire({ icon: "error", title: "Task Removed" });
         const res = await fetch(`${url}/api/topics/${id}`, {
           method: "DELETE",
         });
